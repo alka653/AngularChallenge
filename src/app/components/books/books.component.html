@@ -1,0 +1,21 @@
+<h2>List of books</h2>
+<table datatable [dtOptions]="optionsDataTable" [dtTrigger]="dtTrigger" class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Page count</th>
+			<th>Publish date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<ng-container *ngFor="let book of listBooks">
+			<tr>
+				<td>{{ book.Title }}</td>
+				<td>{{ book.Description }}</td>
+				<td>{{ book.PageCount }}</td>
+				<td>{{ book.PublishDate }}</td>
+			</tr>
+		</ng-container>
+	</tbody>
+</table>
