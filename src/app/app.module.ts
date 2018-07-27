@@ -1,8 +1,10 @@
+import { AuthorsPostComponent } from './components/authors/authors.post.component';
 import { BooksModalComponent } from './components/books/books.modal.component';
 import { AuthorsComponent } from './components/authors/authors.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
 import { BooksComponent } from './components/books/books.component';
+import { StorageServiceModule } from 'angular-webstorage-service';
 import { HomeComponent } from './components/home/home.component';
 import { RequestService } from './services/requests.services';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +23,8 @@ import APP_MODULES from'./app.routes';
 			HomeComponent,
 			BooksComponent,
 			ModalComponent,
-			BooksModalComponent
+			BooksModalComponent,
+			AuthorsPostComponent
 	],
 	imports: [
 		BrowserModule,
@@ -29,7 +32,8 @@ import APP_MODULES from'./app.routes';
 		RouterModule.forRoot(APP_MODULES),
 		HttpModule,
 		DataTablesModule,
-		NgbModule.forRoot()
+		NgbModule.forRoot(),
+		StorageServiceModule
 	],
 	providers: [
 		RequestService,
@@ -37,7 +41,8 @@ import APP_MODULES from'./app.routes';
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [
-		BooksModalComponent
+		BooksModalComponent,
+		AuthorsPostComponent
 	]
 })
 export class AppModule { }

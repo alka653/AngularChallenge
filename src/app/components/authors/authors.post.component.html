@@ -1,0 +1,21 @@
+<app-modal>
+	<div *ngIf="message != ''" class="alert alert-{{ type }}" role="alert">
+		{{ message }}
+	</div>
+	{{ message }}
+	<form #authorForm="ngForm">
+		<div class="form-group">
+			<label for="IDBook">id Book</label>
+			<input type="number" name="IDBook" class="form-control" [(ngModel)]="IDBook">
+		</div>
+		<div class="form-group">
+			<label for="FirstName">First name (required)</label>
+			<input type="text" name="FirstName" class="form-control" required [(ngModel)]="FirstName">
+		</div>
+		<div class="form-group">
+			<label for="LastName">Last name (required)</label>
+			<input type="text" name="LastName" class="form-control" required [(ngModel)]="LastName">
+		</div>
+		<button type="submit" class="btn btn-success btn-block" (click)="postRequest(); authorForm.reset()" [disabled]="!authorForm.form.valid">Submit</button>
+	</form>
+</app-modal>
